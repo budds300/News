@@ -1,0 +1,12 @@
+{% extends 'base.html'}
+{% import 'macros.html as macro'%}
+
+{%block content%}
+
+<div class="container pt-5 articles">
+    <div class="row row-cols-1 row-cols-md-4 pt-5">
+        {{macro.displayArticlesList(article)}}
+    </div>
+</div>
+
+{%endblock%}

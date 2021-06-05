@@ -1,0 +1,15 @@
+{% extends 'base.html'}
+{% import 'macro.html' as macro}
+
+{% block content%}
+<div class="container text-center pt-5">
+    <div class=" pt-5">
+        <h1 class="text-center pt-5" style="text-align:center"> News Sources</h1>
+        <p style="font-size: 20px;">Get the latest news updates form around the World</p>
+    </div>
+    <div class="row pt-5 text-center">
+        {{macro.displayNewsList(en)}}
+    </div>
+</div>
+
+{%endblock%}
