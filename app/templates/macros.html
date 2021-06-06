@@ -4,12 +4,12 @@
             {% for news in news_list %}
         
             
-                <div class="col-sm-6 col-md-3 col-lg-3 p-3">
+                <div class="col-sm-6 col-md-4 col-lg-4 p-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title text-center" style="font-size: medium;">{{news.name}}</h5>
-                            <p class="card-text " style="font-size:small;">{{news.description|truncate}}</p>
-                            <a href="/articles/{{news.id}}" class="btn btn-primary">Get the latest news</a>
+                            <h5 class="card-title text-center" style="font-size: large;">{{news.name}}</h5>
+                            <p class="card-text " style="font-size:medium;">{{news.description|truncate}}</p>
+                            <a href="/articles/{{news.id}}" class="btn btn-info" style="font-weight:700;font-size:medium;">Get the latest news</a>
                         </div>
                     </div>
                 </div>
@@ -21,9 +21,9 @@
 
 {% macro displayArticlesList(article_list) %}
 
-        {% for art  in article_list%}
+        {% for art in article_list%}
 
-            <div class="col mb-4 pt-3 ">
+            <div class="col mb-4 pt-3 col-md-4 col-sm-6 col-lg-4">
                 <div class="card ">  
                     <div class="view overlay">   
                         <img class="img-responsive card-img-top" src="{{art.urlToImage}}" alt="article images">          
@@ -33,9 +33,9 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">{{art.title}}</h4>
-                        <p class="card-text" style="font-size: small;">{{art.description|truncate(60)}}</p>
+                        <p class="card-text" style="font-size: medium;">{{art.description|truncate(60)}}</p>
                         <p>{{art.publishedAt}}</p>
-                        <a href="{{art.url}}" class="btn btn-primary btn-md">Read more</a>
+                        <a href="{{art.url}}" class="btn btn-primary btn-md" style="font-weight:700;font-size:medium;"5>Read more</a>
                     </div>
                 </div>
             </div>
