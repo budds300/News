@@ -1,3 +1,4 @@
+
 import urllib.request,json
 from .models import News,Articles
 
@@ -20,7 +21,7 @@ def get_news(lang):
     Function that gets the json response to our url request
     '''
     get_news_url = base_url.format(lang,apiKey)
-    
+   
     
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -32,7 +33,7 @@ def get_news(lang):
         if get_news_response['sources']:
             news_sources_list = get_news_response['sources']
             news_sources = process_sources(news_sources_list)
-    
+        
     return news_sources
 
 
@@ -107,6 +108,7 @@ def process_articles(article_list):
         urlToImage  = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
         
+       
         if urlToImage:
             article_object = Articles(author,title,description,url,urlToImage,publishedAt)
             news_articles.append(article_object)
